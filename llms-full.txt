@@ -1,0 +1,25 @@
+# Open-Source Microsoft Copilot Alternatives — full text
+
+Source: https://opensourcecopilotalternative.com/
+
+Microsoft's "Copilot" is three different products, and each has its own open-source alternatives. This site separates them.
+
+## Lane A — Coding assistants (replace GitHub Copilot)
+Continue.dev (Apache-2.0; VS Code/JetBrains, bring-your-own model), Aider (Apache-2.0; terminal, git-aware), Cline (Apache-2.0; VS Code agent), Tabby (Apache-2.0; self-hosted Rust completion server), CodeGeeX (Apache-2.0; multi-IDE), FauxPilot (MIT; self-hosted server needing GPU VRAM).
+
+## Lane B — Agent builders (replace Copilot Studio)
+Botpress (MIT core; conversational studio), n8n (Sustainable Use License; workflow automation), LangGraph (MIT; code-first stateful agent graphs), CrewAI (MIT; multi-agent roles), Rasa (Apache-2.0; conversational NLU).
+
+## Lane C — Agent management (replace Microsoft 365 Copilot / Copilot Cowork)
+Kortix/Suna (Elastic License 2.0 source-available; agents, skills, memory and connectors as files in a git repo you own; disposable sandbox per session; work lands via human-reviewed change request; self-host or managed cloud), OpenWork (MIT; local-first desktop, 50+ models BYOK), OpenHands (MIT; Docker runtime, container per task).
+
+## Licence note
+MIT and Apache-2.0 are OSI-approved. Elastic 2.0 and the Sustainable Use License are source-available: the source is public, but commercial hosted-service use is restricted. Verify each upstream LICENSE before adopting.
+
+## Self-hosting
+Coding assistants need a model endpoint and an IDE. Agent platforms need a control plane, sandboxes and connectors. Keep configuration in version control; keep keys in a secret store.
+
+## Copilot vs Cowork
+GitHub Copilot is a coding assistant. Copilot Cowork is Microsoft's agent-management layer, closer to Anthropic's Claude Cowork. If you need an agent workforce with review gates, use lane C.
+
+Related: https://opensourceclaudecowork.com
