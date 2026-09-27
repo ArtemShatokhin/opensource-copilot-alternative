@@ -1,0 +1,15 @@
+# Open-Source Microsoft Copilot Alternatives
+
+> A three-lane map of open-source alternatives to Microsoft's Copilot products: (A) coding assistants, (B) agent builders, (C) agent-management platforms.
+
+## Pages
+- [Home](https://opensourcecopilotalternative.com/): overview and three-lane map.
+- [Three lanes](https://opensourcecopilotalternative.com/three-lanes.html): per-lane comparison tables (licence, models, self-host, notes).
+- [Self-hosting guide](https://opensourcecopilotalternative.com/self-hosting.html): run an open-source coding assistant or agent platform on your own infrastructure.
+- [What is Microsoft Copilot?](https://opensourcecopilotalternative.com/what-is-microsoft-copilot.html): disambiguates GitHub Copilot, Copilot Studio, and Microsoft 365 Copilot / Copilot Cowork.
+- [FAQ](https://opensourcecopilotalternative.com/faq.html): common questions with sourced answers.
+
+## Notes
+- Microsoft's "Copilot" spans three distinct products; a single alternative does not replace all three.
+- Licences are as published by each upstream project; verify before adopting. OSI-approved (MIT/Apache-2.0) differs from source-available (Elastic 2.0).
+- Sibling hub for agent platforms: https://opensourceclaudecowork.com
