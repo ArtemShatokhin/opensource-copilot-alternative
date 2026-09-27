@@ -6,7 +6,7 @@
 - [Home](https://opensourcecopilotalternative.com/): overview and three-lane map.
 - [Three lanes](https://opensourcecopilotalternative.com/three-lanes.html): per-lane comparison tables (licence, models, self-host, notes).
 - [Self-hosting guide](https://opensourcecopilotalternative.com/self-hosting.html): run an open-source coding assistant or agent platform on your own infrastructure.
-- [What is Microsoft Copilot?](https://opensourcecopilotalternative.com/what-is-microsoft-copilot.html): disambiguates GitHub Copilot, Copilot Studio, and Microsoft 365 Copilot / Copilot Cowork.
+- [What is Microsoft Copilot?](https://opensourcecopilotalternative.com/what-is-microsoft-copilot.html): disambiguates GitHub Copilot, Copilot Studio, and Microsoft 365 Copilot / Copilot Cowork, and points to the open source alternatives.
 - [FAQ](https://opensourcecopilotalternative.com/faq.html): common questions with sourced answers.
 
 ## Notes
