@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Three Lanes of Microsoft Copilot Alternatives — Compared</title>
+<meta name="description" content="Per-lane comparison of open-source Microsoft Copilot alternatives: coding assistants, agent builders, and agent-management platforms, by licence, self-hosting and models.">
+<link rel="canonical" href="https://opensourcecopilotalternative.com/three-lanes.html">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Microsoft Copilot alternative lanes","itemListElement":[{"@type":"ListItem","position":1,"name":"Coding assistants"},{"@type":"ListItem","position":2,"name":"Agent builders"},{"@type":"ListItem","position":3,"name":"Agent management platforms"}]}</script>
+</head><body>
+<header><div class="wrap"><nav><a class="brand" href="/">opensourcecopilotalternative.com</a><a href="/three-lanes.html">Three lanes</a><a href="/self-hosting.html">Self-hosting</a><a href="/what-is-microsoft-copilot.html">What is Copilot?</a><a href="/faq.html">FAQ</a></nav></div></header>
+<main class="wrap">
+<h1>The three lanes, compared.</h1>
+<p class="lead">Each table lists open-source alternatives for one Microsoft Copilot surface. "Licence" is as published upstream. All links go to the project's own repository or site — no vendor affiliation.</p>
+<h2 id="lane-a">Lane A — Coding assistants (replace GitHub Copilot)</h2>
+<table><thead><tr><th>Project</th><th>Licence</th><th>Runs in</th><th>Models</th><th>Self-host</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/continuedev/continue">Continue.dev</a></td><td>Apache-2.0</td><td>VS Code, JetBrains</td><td>Bring your own (any provider)</td><td>Yes (extension + your keys)</td></tr>
+<tr><td><a href="https://github.com/Aider-AI/aider">Aider</a></td><td>Apache-2.0</td><td>Terminal</td><td>Any LLM, git-aware</td><td>Yes</td></tr>
+<tr><td><a href="https://github.com/cline/cline">Cline</a></td><td>Apache-2.0</td><td>VS Code</td><td>Any provider</td><td>Yes</td></tr>
+<tr><td><a href="https://github.com/TabbyML/tabby">Tabby</a></td><td>Apache-2.0</td><td>Self-hosted server (Rust)</td><td>Local models</td><td>Yes — server on your infra</td></tr>
+<tr><td><a href="https://github.com/THUDM/CodeGeeX">CodeGeeX</a></td><td>Apache-2.0</td><td>Multiple IDEs</td><td>CodeGeeX / local</td><td>Yes</td></tr>
+<tr><td><a href="https://github.com/fauxpilot/fauxpilot">FauxPilot</a></td><td>MIT</td><td>Self-hosted server (GPU)</td><td>CodeGen-family</td><td>Yes — needs GPU VRAM</td></tr>
+</tbody></table>
+<p><strong>How to choose.</strong> For model flexibility inside an existing IDE, Continue.dev or Cline. For terminal-and-git workflows, Aider. For a fully self-hosted completion server with no external calls, Tabby or FauxPilot.</p>
+<h2 id="lane-b">Lane B — Agent builders (replace Copilot Studio)</h2>
+<table><thead><tr><th>Project</th><th>Licence</th><th>Shape</th><th>Self-host</th><th>Notes</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/botpress/botpress">Botpress</a></td><td>MIT (core)</td><td>Conversational agent studio</td><td>Yes</td><td>Low-code, free tier</td></tr>
+<tr><td><a href="https://github.com/n8n-io/n8n">n8n</a></td><td>Sustainable Use (fair-code)</td><td>Workflow automation</td><td>Yes</td><td>Wide integration library</td></tr>
+<tr><td><a href="https://github.com/langchain-ai/langgraph">LangGraph</a></td><td>MIT</td><td>Code-first agent graphs</td><td>Yes (library)</td><td>Stateful, durable execution</td></tr>
+<tr><td><a href="https://github.com/crewAIInc/crewAI">CrewAI</a></td><td>MIT</td><td>Multi-agent roles</td><td>Yes (library)</td><td>Python orchestration</td></tr>
+<tr><td><a href="https://github.com/RasaHQ/rasa">Rasa</a></td><td>Apache-2.0</td><td>Conversational NLU</td><td>Yes</td><td>Mature dialogue tooling</td></tr>
+</tbody></table>
+<h2 id="lane-c">Lane C — Agent management (replace M365 Copilot / Copilot Cowork)</h2>
+<table><thead><tr><th>Platform</th><th>Licence</th><th>Self-host</th><th>Models</th><th>Isolation / review</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/kortix-ai/suna">Kortix / Suna</a></td><td>Elastic 2.0 (source-available)</td><td>Yes — Docker or your VPC</td><td>Any provider, your keys</td><td>Sandbox per session; work lands via human-reviewed change request</td></tr>
+<tr><td><a href="https://github.com/different-ai/openwork">OpenWork</a></td><td>MIT</td><td>Yes — local desktop</td><td>50+ models via BYOK</td><td>Local process; manual review</td></tr>
+<tr><td><a href="https://github.com/All-Hands-AI/OpenHands">OpenHands</a></td><td>MIT</td><td>Yes — Docker runtime</td><td>Any LLM backend</td><td>Container per task; manual review</td></tr>
+</tbody></table>
+<p><strong>How to choose.</strong> If you want a desktop app that runs on your own machine, OpenWork. If you want agents that execute software tasks in isolation, OpenHands. If you want an org-scale system where agents, skills, memory and connectors live in a git repo you own — with review gates — Kortix/Suna is the lane-C option (source-available, not OSI-approved).</p>
+<footer><p>Licences as published upstream, September 2026. Verify before adopting. See the <a href="/self-hosting.html">self-hosting guide</a> to run these on your own infrastructure.</p></footer>
+</main></body></html>
