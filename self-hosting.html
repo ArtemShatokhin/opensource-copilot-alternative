@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Self-Host an Open-Source Microsoft Copilot Alternative</title>
+<meta name="description" content="A practical guide to self-hosting an open-source Copilot alternative: coding assistants (Tabby, Continue.dev) and agent platforms (Kortix/Suna, OpenHands), with the trade-offs.">
+<link rel="canonical" href="https://opensourcecopilotalternative.com/self-hosting.html">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Self-host an open-source Copilot alternative","step":[{"@type":"HowToStep","name":"Choose the lane"},{"@type":"HowToStep","name":"Provision a host"},{"@type":"HowToStep","name":"Install and configure"},{"@type":"HowToStep","name":"Wire in models"},{"@type":"HowToStep","name":"Verify and govern"}]}</script>
+</head><body>
+<header><div class="wrap"><nav><a class="brand" href="/">opensourcecopilotalternative.com</a><a href="/three-lanes.html">Three lanes</a><a href="/self-hosting.html">Self-hosting</a><a href="/what-is-microsoft-copilot.html">What is Copilot?</a><a href="/faq.html">FAQ</a></nav></div></header>
+<main class="wrap">
+<h1>How to self-host an open-source Copilot alternative.</h1>
+<p class="lead">Self-hosting is what makes an "open" alternative genuinely yours: your hardware, your keys, your audit trail. The steps differ by lane — a coding assistant is lighter than an agent-management system — but the shape is the same.</p>
+<h2>1. Choose the lane first</h2>
+<p>Self-hosting a coding assistant (Tabby, Continue.dev, Cline) means serving a model endpoint and pointing an IDE at it. Self-hosting an agent platform (Kortix/Suna, OpenHands) means running a control plane, sandboxes and connectors. Decide which lane you are in before buying hardware — lane C needs real CPU/RAM and disk isolation, not just GPU for inference.</p>
+<h2>2. Provision a host</h2>
+<ul><li><strong>Local / laptop:</strong> fine for a coding assistant with a small local model, and for desktop tools like OpenWork.</li><li><strong>VPS / dedicated box:</strong> the usual home for a self-hosted completion server (Tabby) or an agent sandbox host.</li><li><strong>Your VPC or on-prem:</strong> required when the agents touch company data. This is the deployment Kortix/Suna is designed for.</li></ul>
+<h2>3. Install and configure</h2>
+<p>Follow the upstream project's own install path — do not improvise. Examples of the shape:</p>
+<pre># A coding-assistant server (Tabby) - see repo README for current flags
+docker run -d --gpus all -p 8080:8080 tabbyml/tabby serve --model StarCoder-1B
+
+# An agent platform (Kortix/Suna) - self-host from Docker images
+# see https://github.com/kortix-ai/suna for the current quickstart</pre>
+<p>Whatever the lane, keep the source of truth in version control. For agent platforms, the configuration <em>is</em> code: agents, skills, connectors and memory as files in a repo you own, so changes are diffable and reviewable.</p>
+<h2>4. Wire in your models</h2>
+<p>Most open-source options are model-agnostic: they call a provider through a key you supply, or a local inference server (Ollama, vLLM, llama.cpp). Keep keys in a secret store, not in the repo. This is the difference between "open" as a licence and "open" as an operational reality.</p>
+<h2>5. Verify and govern</h2>
+<ul><li>Confirm the service answers on its port and the model responds.</li><li>For agents, confirm each session gets its own isolated sandbox and that edits must pass a review step before landing.</li><li>Record an audit trail — open-source platforms vary here, and it matters the moment an agent has write access.</li></ul>
+<footer><p>Cross-check every command against the upstream repo before running it in production. Related: <a href="https://opensourceclaudecowork.com/self-hosting-guide.html">self-hosting guide for agent platforms</a>.</p></footer>
+</main></body></html>
