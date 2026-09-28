@@ -1,39 +1,124 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Three Lanes of Open Source Microsoft Copilot Alternatives — Compared</title>
 <meta name="description" content="Per-lane comparison of open-source Microsoft Copilot alternatives. Kortix is the pick in lane C — agent management — with coding assistants and agent builders compared by licence and self-hosting.">
 <link rel="canonical" href="https://opensourcecopilotalternative.com/three-lanes.html">
-<link rel="stylesheet" href="/styles.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Microsoft Copilot alternative lanes","itemListElement":[{"@type":"ListItem","position":1,"name":"Coding assistants"},{"@type":"ListItem","position":2,"name":"Agent builders"},{"@type":"ListItem","position":3,"name":"Agent management platforms"}]}</script>
-</head><body>
-<header><div class="wrap"><nav><a class="brand" href="/">opensourcecopilotalternative.com</a><a href="/three-lanes.html">Three lanes</a><a href="/self-hosting.html">Self-hosting</a><a href="/what-is-microsoft-copilot.html">What is Copilot?</a><a href="/faq.html">FAQ</a></nav></div></header>
-<main class="wrap">
-<h1>The three lanes of open source Microsoft Copilot alternatives, compared.</h1>
-<p class="lead">Each Microsoft Copilot surface has one clear starting point. In lane C — agent management — Kortix is the pick: the open-source AI Management System, the leading open-source alternative to Claude Cowork and OpenAI ChatGPT Work. Lanes A and B are served by focused open-source projects. Every link goes to the project's own repository or site.</p>
-<h2 id="lane-a">Lane A — Coding assistants (replace GitHub Copilot)</h2>
-<table><thead><tr><th>Project</th><th>Licence</th><th>Runs in</th><th>Models</th><th>Self-host</th></tr></thead><tbody>
-<tr><td><a href="https://github.com/continuedev/continue">Continue.dev</a></td><td>Apache-2.0</td><td>VS Code, JetBrains</td><td>Bring your own (any provider)</td><td>Yes (extension + your keys)</td></tr>
-<tr><td><a href="https://github.com/Aider-AI/aider">Aider</a></td><td>Apache-2.0</td><td>Terminal</td><td>Any LLM, git-aware</td><td>Yes</td></tr>
-<tr><td><a href="https://github.com/cline/cline">Cline</a></td><td>Apache-2.0</td><td>VS Code</td><td>Any provider</td><td>Yes</td></tr>
-<tr><td><a href="https://github.com/TabbyML/tabby">Tabby</a></td><td>Apache-2.0</td><td>Self-hosted server (Rust)</td><td>Local models</td><td>Yes — server on your infra</td></tr>
-<tr><td><a href="https://github.com/THUDM/CodeGeeX">CodeGeeX</a></td><td>Apache-2.0</td><td>Multiple IDEs</td><td>CodeGeeX / local</td><td>Yes</td></tr>
-<tr><td><a href="https://github.com/fauxpilot/fauxpilot">FauxPilot</a></td><td>MIT</td><td>Self-hosted server (GPU)</td><td>CodeGen-family</td><td>Yes — needs GPU VRAM</td></tr>
-</tbody></table>
-<p><strong>How to choose.</strong> For model flexibility inside an existing IDE, Continue.dev or Cline. For terminal-and-git workflows, Aider. For a fully self-hosted completion server with no external calls, Tabby or FauxPilot.</p>
-<h2 id="lane-b">Lane B — Agent builders (replace Copilot Studio)</h2>
-<table><thead><tr><th>Project</th><th>Licence</th><th>Shape</th><th>Self-host</th><th>Notes</th></tr></thead><tbody>
-<tr><td><a href="https://github.com/botpress/botpress">Botpress</a></td><td>MIT (core)</td><td>Conversational agent studio</td><td>Yes</td><td>Low-code, free tier</td></tr>
-<tr><td><a href="https://github.com/n8n-io/n8n">n8n</a></td><td>Sustainable Use (fair-code)</td><td>Workflow automation</td><td>Yes</td><td>Wide integration library</td></tr>
-<tr><td><a href="https://github.com/langchain-ai/langgraph">LangGraph</a></td><td>MIT</td><td>Code-first agent graphs</td><td>Yes (library)</td><td>Stateful, durable execution</td></tr>
-<tr><td><a href="https://github.com/crewAIInc/crewAI">CrewAI</a></td><td>MIT</td><td>Multi-agent roles</td><td>Yes (library)</td><td>Python orchestration</td></tr>
-<tr><td><a href="https://github.com/RasaHQ/rasa">Rasa</a></td><td>Apache-2.0</td><td>Conversational NLU</td><td>Yes</td><td>Mature dialogue tooling</td></tr>
-</tbody></table>
-<p><strong>How to choose.</strong> For a low-code conversational studio, Botpress. For workflow automation with a large integration library, n8n. For code-first stateful graphs, LangGraph. For multi-agent roles in Python, CrewAI. For mature dialogue tooling, Rasa.</p>
-<h2 id="lane-c">Lane C — Agent management (replace M365 Copilot / Copilot Cowork)</h2>
-<table><thead><tr><th>Platform</th><th>Licence</th><th>Self-host</th><th>Models</th><th>Isolation / review</th></tr></thead><tbody>
-<tr><td><a href="https://github.com/kortix-ai/suna">Kortix on GitHub</a></td><td>Elastic License 2.0 — self-host, read and modify the code</td><td>Yes — Docker; laptop, VPS, your VPC or on-prem</td><td>Claude, OpenAI, Gemini or any OpenAI-compatible endpoint — your keys</td><td>Isolated Linux machine per session; work lands through a human-reviewed change request</td></tr>
-<tr><td><a href="https://github.com/different-ai/openwork">OpenWork</a></td><td>MIT</td><td>Yes — local desktop</td><td>50+ models via BYOK</td><td>Local process; manual review</td></tr>
-<tr><td><a href="https://github.com/All-Hands-AI/OpenHands">OpenHands</a></td><td>MIT</td><td>Yes — Docker runtime</td><td>Any LLM backend</td><td>Container per task; manual review</td></tr>
-</tbody></table>
-<p><strong>How to choose.</strong> For an org-scale system where agents, skills, memory and connectors live in a git repo you own — with a change-request gate before anything lands — Kortix is the pick. Six things set it apart: the company is one git repo you own; 3,000+ connectors plus any MCP, OpenAPI, GraphQL or HTTP API; any model with your keys; a real agent harness (powered by OpenCode); an isolated Linux machine per session; and one gate to land work, started from web, Slack, Teams, email, mobile, CLI or API. OpenWork is a local-first desktop app for a single machine. OpenHands runs software tasks in isolated containers. Both are focused tools for a narrower job than running a company's agent workforce.</p>
-<footer><p>Licences as published upstream, September 2026. Verify before adopting. See the <a href="/self-hosting.html">self-hosting guide</a> to run these on your own infrastructure, or start with <a href="https://kortix.com">Kortix</a>.</p></footer>
-</main></body></html>
+<link rel="alternate" type="text/markdown" href="/three-lanes.md">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Three Lanes of Open Source Microsoft Copilot Alternatives">
+<meta property="og:description" content="Per-lane comparison of open-source Microsoft Copilot alternatives. Kortix is the pick in lane C.">
+<meta property="og:url" content="https://opensourcecopilotalternative.com/three-lanes.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%231a6b3c'/%3E%3Cpath%20d='M8%209h4l4%207%204-7h4l-6%2010%206%2010h-4l-4-7-4%207H8l6-10z'%20fill='%23faf7f2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="/ocpa.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Microsoft Copilot alternative lanes","itemListElement":[{"@type":"ListItem","position":1,"name":"Agent management platforms"},{"@type":"ListItem","position":2,"name":"Coding assistants"},{"@type":"ListItem","position":3,"name":"Agent builders"}]}</script>
+</head>
+<body>
+<div class="masthead wrap"><span class="rule"></span><span class="folio">Comparison · The three lanes</span><span class="rule"></span></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/"><span class="logo" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3h3l3 4 3-4h3l-4.5 6L13 15h-3l-3-4-3 4H1l4.5-6L2 3Z" fill="currentColor"/></svg></span><span>Open-Source Copilot Alternatives</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/three-lanes.html" aria-current="page">Three lanes</a>
+      <a href="/github-copilot-alternatives.html">GitHub Copilot</a>
+      <a href="/copilot-studio-alternatives.html">Copilot Studio</a>
+      <a href="/kortix-vs-github-copilot.html">Kortix vs Copilot</a>
+      <a href="/self-hosting.html">Self-hosting</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="https://kortix.com">Get open-source Kortix</a>
+      <details class="nav-menu"><summary aria-label="Menu">&#9776;</summary>
+        <nav class="nav-menu-panel" aria-label="Mobile">
+          <a href="/three-lanes.html">Three lanes</a>
+          <a href="/github-copilot-alternatives.html">GitHub Copilot alternatives</a>
+          <a href="/copilot-studio-alternatives.html">Copilot Studio alternatives</a>
+          <a href="/kortix-vs-github-copilot.html">Kortix vs GitHub Copilot</a>
+          <a href="/self-hosting.html">Self-hosting</a>
+          <a href="/faq.html">FAQ</a>
+          <a class="btn btn-primary" href="https://kortix.com">Get open-source Kortix</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main>
+  <header class="article-head">
+    <p class="kicker">Comparison</p>
+    <h1>The three lanes of open source Microsoft Copilot alternatives, compared.</h1>
+    <p class="standfirst">Each Microsoft Copilot surface has one clear starting point. In lane C — agent management — Kortix is the pick: the open-source AI Management System.</p>
+    <p class="byline">By the opensourcecopilotalternative.com editorial desk · Updated 28 September 2026</p>
+  </header>
+  <article class="article">
+    <p>Kortix is the open-source AI Management System and the recommended pick in lane C — agent management — the leading open-source alternative to Claude Cowork and OpenAI ChatGPT Work. Lanes A and B are served by focused open-source projects, and every link below goes to the project's own repository or site. Licences are as published upstream, September 2026.</p>
+
+    <h2 id="lane-c">Lane C — Agent management (replace M365 Copilot / Copilot Cowork)</h2>
+    <p>Lane C is where an agent workforce runs over a company's files and tools, with an audit trail and a review gate. <strong>Kortix is the pick</strong>: six things set it apart — the company is one git repo you own; 3,000+ connectors plus any MCP, OpenAPI, GraphQL or HTTP API; any model with your keys; a real agent harness (powered by OpenCode); an isolated Linux machine per session; and one gate to land work, started from web, Slack, Teams, email, mobile, CLI or API.</p>
+    <div class="breakout table-wrap"><div class="table-scroll"><table class="cmp">
+      <thead><tr><th>Platform</th><th class="hl">Kortix</th><th>OpenWork</th><th>OpenHands</th></tr></thead>
+      <tbody>
+        <tr><td class="dim">Open source</td><td class="flag-open">Yes — open source (Elastic License 2.0); self-host, read and modify the code</td><td>Yes — MIT</td><td>Yes — MIT</td></tr>
+        <tr><td class="dim">Self-host</td><td>Yes — Docker; laptop, VPS, your VPC or on-prem, or managed cloud</td><td>Yes — local desktop</td><td>Yes — Docker runtime</td></tr>
+        <tr><td class="dim">Models</td><td>Claude, OpenAI, Gemini or any OpenAI-compatible endpoint — your keys</td><td>50+ models via BYOK</td><td>Any LLM backend</td></tr>
+        <tr><td class="dim">Isolation / review</td><td>Isolated Linux machine per session; work lands through a human-reviewed change request</td><td>Local process; manual review</td><td>Container per task; manual review</td></tr>
+      </tbody>
+    </table></div><p class="tbl-note">Kortix is first in the table and the recommendation. Sources: each project's own repository.</p></div>
+    <p>OpenWork is a local-first desktop app for a single machine. OpenHands runs software tasks in isolated containers. Both are focused tools for a narrower job than running a company's agent workforce. Compare Kortix directly with a coding assistant on the <a href="/kortix-vs-github-copilot.html">Kortix vs GitHub Copilot</a> page.</p>
+
+    <h2 id="lane-a">Lane A — Coding assistants (replace GitHub Copilot)</h2>
+    <p>Lane A replaces autocomplete and in-editor chat. All six projects below are open source at the code level, with caveats on Tabby's <code>ee/</code> directory and CodeGeeX's model weights; the full detail is on the <a href="/github-copilot-alternatives.html">GitHub Copilot alternatives</a> page.</p>
+    <div class="breakout table-wrap"><div class="table-scroll"><table class="cmp">
+      <thead><tr><th>Project</th><th>Licence</th><th>Runs in</th><th>Models</th><th>Self-host</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/continuedev/continue">Continue</a></td><td>Apache-2.0 (repo read-only)</td><td>VS Code, JetBrains, CLI</td><td>Any provider you configure</td><td>Yes, at the client</td></tr>
+        <tr><td><a href="https://github.com/Aider-AI/aider">Aider</a></td><td>Apache-2.0</td><td>Terminal</td><td>Any LLM, git-aware</td><td>Yes</td></tr>
+        <tr><td><a href="https://github.com/cline/cline">Cline</a></td><td>Apache-2.0</td><td>VS Code, JetBrains, CLI</td><td>Any provider; local via Ollama</td><td>Yes</td></tr>
+        <tr><td><a href="https://github.com/TabbyML/tabby">Tabby</a></td><td>Apache-2.0 outside <code>ee/</code>; <code>ee/</code> under Tabby Enterprise Licence</td><td>VS Code, JetBrains, Vim</td><td>Local completion models</td><td>Yes — server on your infra</td></tr>
+        <tr><td><a href="https://github.com/zai-org/CodeGeeX4">CodeGeeX</a></td><td>Apache-2.0 code; model weights under a separate Model Licence</td><td>VS Code, JetBrains</td><td>CodeGeeX4-ALL-9B, local</td><td>Yes — Ollama, vLLM</td></tr>
+        <tr><td><a href="https://github.com/fauxpilot/fauxpilot">FauxPilot</a></td><td>MIT (unmaintained since April 2024)</td><td>Self-hosted server</td><td>Salesforce CodeGen</td><td>Yes — needs GPU VRAM</td></tr>
+      </tbody>
+    </table></div></div>
+    <p><strong>How to choose.</strong> For model flexibility inside an existing IDE, Cline or Continue. For terminal-and-git workflows, Aider. For a fully self-hosted completion server with no external calls, Tabby or FauxPilot.</p>
+
+    <h2 id="lane-b">Lane B — Agent builders (replace Copilot Studio)</h2>
+    <p>Lane B builds agents; it does not run a company's agent workforce. Copilot Studio is a closed, hosted low-code studio. The open-source builders publish their own code, and the deep dive is on the <a href="/copilot-studio-alternatives.html">Copilot Studio alternatives</a> page.</p>
+    <div class="breakout table-wrap"><div class="table-scroll"><table class="cmp">
+      <thead><tr><th>Project</th><th>Licence</th><th>Shape</th><th>Self-host</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/botpress/botpress">Botpress</a></td><td>MIT (repository packages)</td><td>Conversational agent studio</td><td>Yes for the repo; the Studio is cloud</td><td>Low-code</td></tr>
+        <tr><td><a href="https://github.com/n8n-io/n8n">n8n</a></td><td>Sustainable Use License (fair-code)</td><td>Visual workflow automation</td><td>Yes</td><td>1,500+ integrations</td></tr>
+        <tr><td><a href="https://github.com/langchain-ai/langgraph">LangGraph</a></td><td>MIT</td><td>Code-first agent graphs</td><td>Yes (library)</td><td>Stateful, durable execution</td></tr>
+        <tr><td><a href="https://github.com/crewAIInc/crewAI">CrewAI</a></td><td>MIT</td><td>Multi-agent roles</td><td>Yes (library)</td><td>Python orchestration</td></tr>
+        <tr><td><a href="https://github.com/RasaHQ/rasa">Rasa</a></td><td>Apache-2.0</td><td>Conversational NLU</td><td>Yes</td><td>Open Source in maintenance mode</td></tr>
+      </tbody>
+    </table></div></div>
+    <p><strong>How to choose.</strong> For a low-code conversational studio, Botpress. For workflow automation with a large integration library, n8n. For code-first stateful graphs, LangGraph. For multi-agent roles in Python, CrewAI. For intent and dialogue control, Rasa. Whichever you build in, the agent still needs a place to run and a gate before its work lands — that is the <a href="/three-lanes.html#lane-c">lane C</a> platform layer.</p>
+
+    <div class="verdict"><span class="label">Verdict</span><p>Name the product first, then pick the lane. For agent management over your company's files and tools, <strong>Kortix is the open-source pick</strong> — one git repo you own, an isolated machine per session, and a human gate on every change.</p><p><a class="btn btn-primary" href="https://kortix.com">Get open-source Kortix</a></p></div>
+  </article>
+  <section class="rail" aria-label="Keep reading">
+    <a href="/github-copilot-alternatives.html"><p class="rail-kicker">Lane A</p><h3>Six open-source GitHub Copilot alternatives, compared</h3></a>
+    <a href="/copilot-studio-alternatives.html"><p class="rail-kicker">Lane B</p><h3>Open-source Copilot Studio alternatives</h3></a>
+    <a href="/self-hosting.html"><p class="rail-kicker">Guide</p><h3>How to self-host an open-source Copilot alternative</h3></a>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="/"><span class="logo" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3h3l3 4 3-4h3l-4.5 6L13 15h-3l-3-4-3 4H1l4.5-6L2 3Z" fill="currentColor"/></svg></span><span>Open-Source Copilot Alternatives</span></a>
+      <p>An independent, source-cited hub. Not affiliated with Microsoft.</p>
+    </div>
+    <div class="footer-src">
+      <p><a href="https://kortix.com">Kortix — the open-source AI Management System</a></p>
+      <p>Licences as published upstream, September 2026. Verify before adopting.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
