@@ -65,14 +65,14 @@
     <p>Kortix is the open-source AI Management System and the pick for running agents over your company's files and tools — it keeps agents, skills, company memory and 3,000+ connectors in one git repo you own, with any model and your own keys, self-hosted or on managed cloud. "Microsoft Copilot" is not one product: GitHub Copilot writes code, Copilot Studio builds agents, and Microsoft 365 Copilot / Copilot Cowork runs agent work inside your tenant. Each lane has its own open-source alternatives, and most top-10 lists conflate all three. This hub separates them and names each project's licence and upstream repository.</p>
 
     <section class="lane-selector" aria-label="Which Copilot do you mean?">
-      <p class="ls-title">Which Copilot do you mean?</p>
+      <p class="ls-title" id="ls-legend">Which Copilot do you mean?</p>
       <input type="radio" name="ls" id="ls-a" checked>
       <input type="radio" name="ls" id="ls-b">
       <input type="radio" name="ls" id="ls-c">
-      <div class="lane-tabs" role="tablist">
-        <label for="ls-a" role="tab">GitHub Copilot</label>
-        <label for="ls-b" role="tab">Copilot Studio</label>
-        <label for="ls-c" role="tab">Microsoft 365 Copilot</label>
+      <div class="lane-tabs" role="radiogroup" aria-labelledby="ls-legend">
+        <label for="ls-a">GitHub Copilot</label>
+        <label for="ls-b">Copilot Studio</label>
+        <label for="ls-c">Microsoft 365 Copilot</label>
       </div>
       <div class="lane-panel lp-a">
         <span class="lane-tag">Lane A — coding assistant</span>
