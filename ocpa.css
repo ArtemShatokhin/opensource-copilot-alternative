@@ -813,3 +813,25 @@ h1, h2, .hero h1 { letter-spacing: -0.01em; font-weight: 600; }
   .lane-tabs label:last-child { border-bottom: 0; }
   .rail { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   Site fix (2026-09-28): "Pick your lane" renders 3 lanes side by side on
+   desktop instead of a 2-column auto-fit that left the third card alone.
+   3 columns on desktop, 1 column on mobile. The grid breaks out of the
+   68ch article so the three cards have room to read.
+   ============================================================ */
+.lanes-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  width: min(1000px, 100vw - 2rem);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 900px) {
+  .lanes-3 {
+    grid-template-columns: 1fr;
+    width: auto;
+    margin-left: 0;
+    transform: none;
+  }
+}
