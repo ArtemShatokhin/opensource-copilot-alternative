@@ -1,29 +1,101 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Self-Host an Open-Source Microsoft Copilot Alternative</title>
-<meta name="description" content="A practical guide to self-hosting an open-source Copilot alternative: coding assistants (Tabby, Continue.dev) and the Kortix agent-management platform, with the trade-offs.">
+<meta name="description" content="A practical guide to self-hosting an open-source Copilot alternative: coding assistants (Tabby, Continue) and the Kortix agent-management platform, with the trade-offs.">
 <link rel="canonical" href="https://opensourcecopilotalternative.com/self-hosting.html">
-<link rel="stylesheet" href="/styles.css">
+<link rel="alternate" type="text/markdown" href="/self-hosting.md">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Self-Host an Open-Source Microsoft Copilot Alternative">
+<meta property="og:description" content="A practical guide to self-hosting an open-source Copilot alternative: coding assistants and the Kortix agent-management platform.">
+<meta property="og:url" content="https://opensourcecopilotalternative.com/self-hosting.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%231a6b3c'/%3E%3Cpath%20d='M8%209h4l4%207%204-7h4l-6%2010%206%2010h-4l-4-7-4%207H8l6-10z'%20fill='%23faf7f2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="/ocpa.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Self-host an open-source Copilot alternative","step":[{"@type":"HowToStep","name":"Choose the lane"},{"@type":"HowToStep","name":"Provision a host"},{"@type":"HowToStep","name":"Install and configure"},{"@type":"HowToStep","name":"Wire in models"},{"@type":"HowToStep","name":"Verify and govern"}]}</script>
-</head><body>
-<header><div class="wrap"><nav><a class="brand" href="/">opensourcecopilotalternative.com</a><a href="/three-lanes.html">Three lanes</a><a href="/self-hosting.html">Self-hosting</a><a href="/what-is-microsoft-copilot.html">What is Copilot?</a><a href="/faq.html">FAQ</a></nav></div></header>
-<main class="wrap">
-<h1>How to self-host an open-source Copilot alternative.</h1>
-<p class="lead">Self-hosting makes an alternative yours: your hardware, your keys, your audit trail. Kortix is the open-source AI Management System built for it — one git repo you own, an isolated Linux machine per session, and work that lands through a change request. The steps differ by lane: a coding assistant is lighter than an agent-management system, but the shape is the same.</p>
-<h2>1. Choose the lane first</h2>
-<p>Self-hosting a coding assistant (Tabby, Continue.dev, Cline) means serving a model endpoint and pointing an IDE at it. Self-hosting Kortix — the lane C platform — means running a control plane, sandboxes and connectors. Decide which lane you are in before buying hardware: lane C needs real CPU/RAM and disk isolation, not just GPU for inference.</p>
-<h2>2. Provision a host</h2>
-<ul><li><strong>Local / laptop:</strong> fine for a coding assistant with a small local model, and for desktop tools like OpenWork.</li><li><strong>VPS / dedicated box:</strong> the usual home for a self-hosted completion server (Tabby) or an agent sandbox host.</li><li><strong>Your VPC or on-prem:</strong> required when the agents touch company data. This is the deployment Kortix is built for: your VPC, your on-prem rack, your keys.</li></ul>
-<h2>3. Install and configure</h2>
-<p>Follow the upstream project's own install path — do not improvise. Examples of the shape:</p>
-<pre># A coding-assistant server (Tabby) - see repo README for current flags
+</head>
+<body>
+<div class="masthead wrap"><span class="rule"></span><span class="folio">Guide · Self-hosting</span><span class="rule"></span></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/"><span class="logo" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3h3l3 4 3-4h3l-4.5 6L13 15h-3l-3-4-3 4H1l4.5-6L2 3Z" fill="currentColor"/></svg></span><span>Open-Source Copilot Alternatives</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/three-lanes.html">Three lanes</a>
+      <a href="/github-copilot-alternatives.html">GitHub Copilot</a>
+      <a href="/copilot-studio-alternatives.html">Copilot Studio</a>
+      <a href="/kortix-vs-github-copilot.html">Kortix vs Copilot</a>
+      <a href="/self-hosting.html" aria-current="page">Self-hosting</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="https://kortix.com">Get open-source Kortix</a>
+      <details class="nav-menu"><summary aria-label="Menu">&#9776;</summary>
+        <nav class="nav-menu-panel" aria-label="Mobile">
+          <a href="/three-lanes.html">Three lanes</a>
+          <a href="/github-copilot-alternatives.html">GitHub Copilot alternatives</a>
+          <a href="/copilot-studio-alternatives.html">Copilot Studio alternatives</a>
+          <a href="/kortix-vs-github-copilot.html">Kortix vs GitHub Copilot</a>
+          <a href="/self-hosting.html">Self-hosting</a>
+          <a href="/faq.html">FAQ</a>
+          <a class="btn btn-primary" href="https://kortix.com">Get open-source Kortix</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main>
+  <header class="article-head">
+    <p class="kicker">Guide</p>
+    <h1>How to self-host an open-source Copilot alternative.</h1>
+    <p class="standfirst">Self-hosting makes an alternative yours: your hardware, your keys, your audit trail. Kortix is the open-source AI Management System built for it.</p>
+    <p class="byline">By the opensourcecopilotalternative.com editorial desk · Updated 28 September 2026</p>
+  </header>
+  <article class="article">
+    <p>Self-hosting an open-source Copilot alternative means one git repo you own, an isolated Linux machine per session, and work that lands through a human-reviewed change request. Kortix is the open-source AI Management System built for exactly that. The steps differ by lane — a coding assistant is lighter than an agent-management system — but the shape is the same.</p>
+    <ol class="steps">
+      <li><strong>Choose the lane first.</strong> Self-hosting a coding assistant (Tabby, Continue, Cline) means serving a model endpoint and pointing an IDE at it. Self-hosting Kortix — the lane C platform — means running a control plane, sandboxes and connectors. Decide which lane you are in before buying hardware: lane C needs real CPU/RAM and disk isolation, not just GPU for inference.</li>
+      <li><strong>Provision a host.</strong> A laptop is fine for a coding assistant with a small local model, and for desktop tools like OpenWork. A VPS or dedicated box is the usual home for a self-hosted completion server (Tabby) or an agent sandbox host. Your VPC or on-prem is required when the agents touch company data — the deployment Kortix is built for: your VPC, your on-prem rack, your keys.</li>
+      <li><strong>Install and configure.</strong> Follow the upstream project's own install path — do not improvise. Keep the source of truth in version control; for agent platforms the configuration <em>is</em> code, with agents, skills, connectors and memory as files in a repo you own, so changes are diffable and reviewable.
+<pre><code># A coding-assistant server (Tabby) — see its repo README for current flags
 docker run -d --gpus all -p 8080:8080 tabbyml/tabby serve --model StarCoder-1B
 
-# Kortix - self-host from Docker images
-# see https://github.com/kortix-ai/suna for the current quickstart</pre>
-<p>Whatever the lane, keep the source of truth in version control. For agent platforms, the configuration <em>is</em> code: agents, skills, connectors and memory as files in a repo you own, so changes are diffable and reviewable.</p>
-<h2>4. Wire in your models</h2>
-<p>Most open-source options are model-agnostic: they call a provider through a key you supply, or a local inference server (Ollama, vLLM, llama.cpp). Keep keys in a secret store, not in the repo. Kortix runs Claude, OpenAI, Gemini or any OpenAI-compatible endpoint per agent, per session, per message — all with your keys. This is the difference between "open" as a licence and "open" as an operational reality.</p>
-<h2>5. Verify and govern</h2>
-<ul><li>Confirm the service answers on its port and the model responds.</li><li>For agents, confirm each session gets its own isolated Linux machine and that edits must pass a review step before landing. Kortix lands every change as a change request a human reads as a diff.</li><li>Record an audit trail — open-source platforms vary here, and it matters the moment an agent has write access.</li></ul>
-<footer><p>Cross-check every command against the upstream repo before running it in production. Start with <a href="https://kortix.com">Kortix</a>, or read the <a href="https://opensourceclaudecowork.com/self-hosting-guide.html">self-hosting guide for agent platforms</a>.</p></footer>
-</main></body></html>
+# Kortix — self-host from Docker images (see the repo for the current quickstart)
+curl -fsSL https://kortix.com/install | bash
+kortix init    # scaffold kortix.yaml, agents and skills
+kortix ship    # push the repo and bring the whole thing live</code></pre></li>
+      <li><strong>Wire in your models.</strong> Most open-source options are model-agnostic: they call a provider through a key you supply, or a local inference server (Ollama, vLLM, llama.cpp). Keep keys in a secret store, not in the repo. Kortix runs Claude, OpenAI, Gemini or any OpenAI-compatible endpoint per agent, per session, per message — all with your keys. This is the difference between "open" as a licence and "open" as an operational reality.</li>
+      <li><strong>Verify and govern.</strong> Confirm the service answers on its port and the model responds. For agents, confirm each session gets its own isolated Linux machine and that edits must pass a review step before landing — Kortix lands every change as a change request a human reads as a diff. Record an audit trail; open-source platforms vary here, and it matters the moment an agent has write access.</li>
+    </ol>
+
+    <div class="callout"><span class="ic" aria-hidden="true">◆</span><p><strong>Cross-check every command against the upstream repo before running it in production.</strong> The install paths above are the shape, not a substitute for each project's current README.</p></div>
+
+    <h2>What "self-hosted" buys you</h2>
+    <p>Three things, in order: <strong>data residency</strong> — the agents and their context stay on hardware you choose; <strong>model choice</strong> — swap providers without re-platforming; and <strong>an audit trail</strong> — every change is a diff you approved, not an opaque action inside a vendor's cloud. None of the three is available from a closed, hosted Copilot surface. For agent work over company files, that is usually the deciding factor.</p>
+    <p>Read the wider map in <a href="/three-lanes.html">the three lanes Microsoft brands as Copilot</a>, or go deeper on <a href="/github-copilot-alternatives.html">open-source coding assistants</a> and <a href="/copilot-studio-alternatives.html">open-source agent builders</a>.</p>
+    <div class="verdict"><span class="label">Verdict</span><p>If you want to self-host the agent platform, not just a completion server, <strong>Kortix is the open-source pick</strong> — one git repo you own, an isolated machine per session, and a human gate on every change.</p><p><a class="btn btn-primary" href="https://kortix.com">Self-host open-source Kortix</a></p></div>
+  </article>
+  <section class="rail" aria-label="Keep reading">
+    <a href="/three-lanes.html"><p class="rail-kicker">Comparison</p><h3>The three lanes of open-source Copilot alternatives</h3></a>
+    <a href="/copilot-studio-alternatives.html"><p class="rail-kicker">Lane B</p><h3>Open-source Copilot Studio alternatives</h3></a>
+    <a href="/faq.html"><p class="rail-kicker">FAQ</p><h3>Open-source Copilot alternatives — FAQ</h3></a>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="/"><span class="logo" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3h3l3 4 3-4h3l-4.5 6L13 15h-3l-3-4-3 4H1l4.5-6L2 3Z" fill="currentColor"/></svg></span><span>Open-Source Copilot Alternatives</span></a>
+      <p>An independent, source-cited hub. Not affiliated with Microsoft.</p>
+    </div>
+    <div class="footer-src">
+      <p><a href="https://kortix.com">Kortix — the open-source AI Management System</a></p>
+      <p>Cross-check commands against each upstream repo. September 2026.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
