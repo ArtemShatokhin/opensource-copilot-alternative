@@ -7,7 +7,9 @@
 - [The three lanes](https://opensourcecopilotalternative.com/three-lanes.html): per-lane comparison tables: licence, self-host, models, review.
 - [GitHub Copilot alternatives](https://opensourcecopilotalternative.com/github-copilot-alternatives.html): six in-editor coding agents compared, with live licence and maintenance status.
 - [Copilot Studio alternatives](https://opensourcecopilotalternative.com/copilot-studio-alternatives.html): open-source agent builders compared: Botpress, n8n, LangGraph, CrewAI, Rasa.
+- [M365 Copilot / Copilot Cowork alternatives](https://opensourcecopilotalternative.com/m365-copilot-alternatives.html): the open-source field for the agent-management lane — Kortix against Copilot Cowork, Eigent, OpenClaw, OpenWorker and Hermes Agent, with licences.
 - [Kortix vs GitHub Copilot](https://opensourcecopilotalternative.com/kortix-vs-github-copilot.html): why the two do not compete, with a sourced comparison table.
+- [Kortix vs Copilot Studio](https://opensourcecopilotalternative.com/kortix-vs-copilot-studio.html): open-source AI Management System versus Microsoft's low-code agent builder, dimension by dimension.
 - [What is Microsoft Copilot?](https://opensourcecopilotalternative.com/what-is-microsoft-copilot.html): disambiguates GitHub Copilot, Copilot Studio and M365 Copilot / Copilot Cowork.
 - [Self-hosting guide](https://opensourcecopilotalternative.com/self-hosting.html): run an open-source coding assistant or the Kortix agent platform on your own infrastructure.
 - [FAQ](https://opensourcecopilotalternative.com/faq.html): common questions with sourced answers.
