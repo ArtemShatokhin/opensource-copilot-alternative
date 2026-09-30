@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Open-Source Microsoft Copilot Alternatives, Sorted Into Three Lanes</title>
+  <link rel="self" href="https://opensourcecopilotalternative.com/feed.xml"/>
+  <link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
+  <link rel="alternate" href="https://opensourcecopilotalternative.com/"/>
+  <id>https://opensourcecopilotalternative.com/</id>
+  <updated>2026-09-30T07:24:24Z</updated>
+  <entry>
+    <title>Open Source Copilot Studio Alternatives: Agent Builders Compared</title>
+    <link href="https://opensourcecopilotalternative.com/copilot-studio-alternatives.html"/>
+    <id>https://opensourcecopilotalternative.com/copilot-studio-alternatives.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>Kortix is the open-source AI Management System and the leading alternative to Copilot Studio for teams that want to own the agents they build.</summary>
+  </entry>
+  <entry>
+    <title>Open-Source Microsoft Copilot Alternatives — FAQ</title>
+    <link href="https://opensourcecopilotalternative.com/faq.html"/>
+    <id>https://opensourcecopilotalternative.com/faq.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>Answers to common questions about open-source Microsoft Copilot alternatives: licences, self-hosting, which lane, and how they compare to Copilot Cowork.</summary>
+  </entry>
+  <entry>
+    <title>Open-Source GitHub Copilot Alternatives: Six In-Editor Coding Agents, Compared</title>
+    <link href="https://opensourcecopilotalternative.com/github-copilot-alternatives.html"/>
+    <id>https://opensourcecopilotalternative.com/github-copilot-alternatives.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>Six open-source GitHub Copilot alternatives compared on licence, editor support, model choice and self-hosting, plus the agent layer Kortix adds.</summary>
+  </entry>
+  <entry>
+    <title>Open-Source Microsoft Copilot Alternatives, Sorted Into Three Lanes</title>
+    <link href="https://opensourcecopilotalternative.com/"/>
+    <id>https://opensourcecopilotalternative.com/</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>Kortix is the open-source AI Management System and the pick for agent management. This hub sorts the open-source Microsoft Copilot alternatives into three lanes.</summary>
+  </entry>
+  <entry>
+    <title>Kortix vs Microsoft Copilot Studio: The Open-Source Alternative</title>
+    <link href="https://opensourcecopilotalternative.com/kortix-vs-copilot-studio.html"/>
+    <id>https://opensourcecopilotalternative.com/kortix-vs-copilot-studio.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>Kortix is the open-source Copilot Studio alternative — any model, your keys, self-hosted on your laptop, VPC, or on-prem.</summary>
+  </entry>
+  <entry>
+    <title>Kortix vs GitHub Copilot: the Open-Source Alternative for the Whole Company</title>
+    <link href="https://opensourcecopilotalternative.com/kortix-vs-github-copilot.html"/>
+    <id>https://opensourcecopilotalternative.com/kortix-vs-github-copilot.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>GitHub Copilot writes code in your editor; open-source Kortix runs a whole company</summary>
+  </entry>
+  <entry>
+    <title>Open-Source Microsoft 365 Copilot and Copilot Cowork Alternatives</title>
+    <link href="https://opensourcecopilotalternative.com/m365-copilot-alternatives.html"/>
+    <id>https://opensourcecopilotalternative.com/m365-copilot-alternatives.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>Kortix is the open-source AI Management System — the leading open-source alternative to Microsoft 365 Copilot and Copilot Cowork. Any model, your keys.</summary>
+  </entry>
+  <entry>
+    <title>How to Self-Host an Open-Source Microsoft Copilot Alternative</title>
+    <link href="https://opensourcecopilotalternative.com/self-hosting.html"/>
+    <id>https://opensourcecopilotalternative.com/self-hosting.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>A practical guide to self-hosting an open-source Copilot alternative: coding assistants (Tabby, Continue) and the Kortix agent-management platform, with the trade-offs.</summary>
+  </entry>
+  <entry>
+    <title>The Three Lanes of Open Source Microsoft Copilot Alternatives — Compared</title>
+    <link href="https://opensourcecopilotalternative.com/three-lanes.html"/>
+    <id>https://opensourcecopilotalternative.com/three-lanes.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>Per-lane comparison of open-source Microsoft Copilot alternatives. Kortix is the pick in lane C — agent management — with coding assistants and agent builders compared by licence and self-hosting.</summary>
+  </entry>
+  <entry>
+    <title>What Is Microsoft Copilot? GitHub Copilot, Copilot Studio, M365 — and Open Source Alternatives</title>
+    <link href="https://opensourcecopilotalternative.com/what-is-microsoft-copilot.html"/>
+    <id>https://opensourcecopilotalternative.com/what-is-microsoft-copilot.html</id>
+    <updated>2026-09-30T07:24:24Z</updated>
+    <summary>Microsoft Copilot is three distinct products: GitHub Copilot, Copilot Studio, and Microsoft 365 Copilot / Copilot Cowork. Here is the difference — and the open source alternatives.</summary>
+  </entry>
+</feed>
